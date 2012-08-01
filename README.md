@@ -25,3 +25,4 @@ https://disk.yandex.net/disk/public/?hash=LD2Bx19Si7cr%2BQHBPaP%2BlSbgosUa8N5%2B
 More information: 
 
 https://leresearcher.wordpress.com
+https://twitter.com/le_researcher
