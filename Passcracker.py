@@ -52,13 +52,13 @@ if __name__ == "__main__":
 
 ############################################################optional##############################################################
 					print "Running Passwordpro & combinator rules...."
-					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/passwordspro.rule", "--rules-file","hashcat/rules/combinator.rule","--outfile", "crackme.out", "crackme.txt", "password.txt"], stdout=subprocess.PIPE).communicate()[0]
+					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/passwordspro.rule", "--rules-file","hashcat/rules/combinator.rule","--outfile", "crackme.out", sys.argv[1], "password.txt"], stdout=subprocess.PIPE).communicate()[0]
 					print hashcat
 					print "Running Leetspeak & Best64 rules...."
-					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/best64.rule", "--rules-file","hashcat/rules/leetspeak.rule", "--outfile", "crackme.out", "crackme.txt", "password.txt"], stdout=subprocess.PIPE).communicate()[0]
+					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/best64.rule", "--rules-file","hashcat/rules/leetspeak.rule", "--outfile", "crackme.out", sys.argv[1], "password.txt"], stdout=subprocess.PIPE).communicate()[0]
 					print hashcat
 					print "Running generated Rules...."
-					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/generated.rule", "--outfile", "crackme.out", "crackme.txt", "password.txt"], stdout=subprocess.PIPE).communicate()[0]
+					hashcat = subprocess.Popen(["optirun","./hashcat/cudaHashcat-plus64.bin","--remove","--rules-file","hashcat/rules/generated.rule", "--outfile", "crackme.out", sys.argv[1], "password.txt"], stdout=subprocess.PIPE).communicate()[0]
 					print hashcat
 					f = open("password.txt", "w").write("")
 ############################################################optional##############################################################
