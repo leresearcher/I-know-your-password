@@ -10,6 +10,12 @@ Settings are MD5 only, just edit when you want to crack other then MD5
 ======================++++++===================
 
 The program will connect to twitter, grep a few tweets and use those words as basewords for cracking MD5 hashes. 
+You can edit keywords.txt if you want to search for specific basewords. For example, when you did some research
+on a person and you know the person loves soccer, cars, and gadgets. You can add to keywords.txt names of soccer clubs, 
+his favorite cars, or when use an iphone you can add that too. Basically you can add everything you know about the person
+to crack his password. 
+
+=====================++++++===================
 
 An example on the output and complexity of the passwords
 
