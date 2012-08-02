@@ -18,20 +18,23 @@ to crack his password.
 =====================++++++===================
 
 An example on the output and complexity of the passwords
-
 http://pastebin.com/EJted1QL
 http://forum.insidepro.com/download.php?id=7900
 
 
 To test it yourself, you can download 7mil MD5 passwords here: 
-
 https://disk.yandex.net/disk/public/?hash=LD2Bx19Si7cr%2BQHBPaP%2BlSbgosUa8N5%2BjKZ2V8UD4LY%3D&final=true
+
+You will find 8,7 mil wordlist (scraped passwords) in the folder "Password list"
 
 
 More information: 
-
 https://leresearcher.wordpress.com
 https://twitter.com/le_researcher
+
+Success!
+
+-Leres
 
 ========================================================
 
