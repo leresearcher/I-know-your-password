@@ -32,3 +32,7 @@ More information:
 
 https://leresearcher.wordpress.com
 https://twitter.com/le_researcher
+
+========================================================
+
+I will not do Windows support. Get a better OS windows is always telling about. 
