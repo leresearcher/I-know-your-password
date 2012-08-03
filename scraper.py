@@ -4,7 +4,7 @@
 ####################################################################################
 #
 # Basicly same idea as Passcracker.py, only this generates a baseword list. 
-# Only reads 1MB from password.txt and choose a random word to search for. 
+# Reads 1MB from password.txt and choose a random word to search for. 
 #
 ####################################################################################
 
