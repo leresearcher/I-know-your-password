@@ -4,7 +4,7 @@
 ####################################################################################
 #
 # Basicly same idea as Passcracker.py, only this generates a baseword list. 
-# Only reads 1MB from password.txt and choose a random word to search for. 
+# Reads 1MB from password.txt and choose a random word to search for. 
 #
 ####################################################################################
 
@@ -15,7 +15,7 @@ import sys
 import random
 import subprocess
 import unicodedata
-import os
+import time
 
 def unique(words):
 	array = []
@@ -23,7 +23,8 @@ def unique(words):
 	return array
 
 def twitter(query):
-	data = json.loads(urllib2.urlopen("http://search.twitter.com/search.json?q=%s&rpp=1000"%query).read())
+	twitter = urllib2.urlopen("http://search.twitter.com/search.json?q=%s&rpp=1000"%query).read()
+	data = json.loads(twitter)
 	array = []
 
 	for tweet in data['results']:
@@ -33,8 +34,12 @@ def twitter(query):
 	return array
 
 def randomword():
-	readfile = os.open('password.txt', os.O_RDONLY)
-	words = random.choice(filter(None, [line.strip() for line in os.read(readfile, 100000).split('\n')]))
+	f= open('password.txt', "r")
+	f.seek (0, 2)
+	size = f.tell()
+	f.seek (max (size-1024, 0), 0)
+	words = random.choice(filter(None, [line.strip() for line in f.readlines()]))
+
 	return words
 
 if __name__ == "__main__":	
@@ -42,12 +47,12 @@ if __name__ == "__main__":
 		while 1:
 			try:
 				word = randomword()
-				print "\nSearching for:",word
+				print "Searching for:",word
 				wordlist = unique(twitter(word))
-				print wordlist			
-				
+	
 				for i in xrange(len(wordlist)):				
 					open("password.txt", "a").write("%s\n"%wordlist[i])
+				time.sleep(1)
 
 			except (KeyboardInterrupt, SystemExit):
 				sys.exit(sys.stderr.write("Bai Bai\n"))
